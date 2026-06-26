@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+<body>
+
+    <h1> Students Data</h1>
+
+    <div>
+        <a href="/add">+ Add Student</a>
+
+    </div>
+
+    <%if(students.length===0){%>
+        <p>No Student above</p>
+
+    <%} else {%> 
+
+        <%students.forEach((elem)=>{%>
+
+            <div style="border:solid black 2px; margin:4px;">
+              <h3> <span> Name  </span>   <%=elem.name%></h3>
+              <h3> <span> Age  </span>   <%=elem.age%></h3> 
+              <h3> <span> Email  </span> <%=elem.email%></h3> 
+              <h3> <span> Course  </span><%=elem.course%> </h3> 
+
+
+              <a href="/edit/<%=elem._id%>" >Edit student</a>
+
+              <a href="/delete/<%=elem._id%>">Delete</a>
+        
+            </div>
+        <%})%>
+
+    <%}%>
+    
+</body>
+</html>
